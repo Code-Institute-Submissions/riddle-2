@@ -1,0 +1,39 @@
+.text {
+    text-align: center;
+}
+
+.bg {
+    background-image:url("https://c.pxhere.com/photos/66/81/gamepad_video_game_controller_game_controller_controller_fun_playing_gaming_technology-568722.jpg!d");
+    background-size:cover;
+    background-repeat:no-repeat;
+
+}
+
+.font {
+    color: white;
+    font-family: 'Alfa Slab One', cursive;
+    font-size:45px;
+    font-weight:600;
+}
+.font1{
+    color:white;
+    font-family: 'Patrick Hand', cursive;
+    
+}
+.font2 a{
+    color: dimgrey;
+    text-decoration: none;
+    
+}
+.vertical{
+    margin-top:100px;
+}
+.line{
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid gray;
+  outline: none;
+}
+.bg-color{
+    background-color:#265e7d80;
+}
