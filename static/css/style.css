@@ -14,7 +14,8 @@
 .font3 {
   font-family: 'Rancho', cursive;
   font-weight: 600;
-  font-size: 20px; }
+  font-size: 20px;
+  color: white; }
 
 .font {
   color: white;
