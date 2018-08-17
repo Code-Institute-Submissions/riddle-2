@@ -1,10 +1,50 @@
 [
     {
-         "question" : "What is your name ?",
-         "answer" : "Fuck off"
+         "question" : "In 2011, which country hosted a Formula 1 race for the first time?",
+         "answer" : "India"
     },
     {
-        "question": "Are you single?",
-        "answer" :"Yes"
+        "question": "Which sport does Constantino Rocca play?",
+        "answer" :"Golf"
+    },
+    {
+       "question": "Which chess piece can only move diagonally?",
+        "answer" :"bishop" 
+    },
+    {
+       "question": "Name the only footballer to have played for Liverpool, Everton, Manchester City and Manchester United.",
+        "answer" :"Peter Beardsley" 
+    },
+    {
+       "question": "Which country is Prague in?",
+        "answer" :"Czech Republic" 
+    },
+    {
+       "question": "What is the capital city of Spain?",
+        "answer" :"Madrid" 
+    },
+    {
+       "question": "Which is the only American state to begin with the letter 'p'?",
+        "answer" :"Pennsylvania" 
+    },
+    {
+       "question": "Name the world's biggest island.",
+        "answer" :"Greenland" 
+    },
+    {
+       "question": "Name the world famous gardens situated ten miles outside of London, close to the River Thames.",
+        "answer" :"Kew Gardens" 
+    },
+    {
+       "question": "When was William Shakespeare born?",
+        "answer" :"23rd April 1564" 
+    },
+    {
+       "question": "Which Shakespeare play features Shylock?",
+        "answer" :"The Merchant of Venice" 
+    },
+    {
+       "question": "What was the most watched UK TV programme of all time?",
+        "answer" :"Eastenders" 
     }
     ]
