@@ -6,14 +6,15 @@ app = Flask(__name__)
 
 with open("data/quiz.json","r") as info:
     data = json.load(info)
-print(data) #what you're comparing to
+
     
 # counter_dict = {}
+
 
 #create an login form 
 @app.route('/',methods=['GET','POST'] )
 def login():
-    if request.method == "POST": 
+    if request.method == "POST":
         with open("data/reg-detail.txt","r") as fp:  
             valid_users = fp.read().splitlines()
             print(valid_users)
@@ -26,15 +27,17 @@ def login():
     return render_template('index.html')
         
     
-
+score = 0
 # quiz 
 @app.route('/quiz', methods=['GET','POST'])
 def quiz():
     
     counter = 0 # If it's a GET request we start the counter at 0
+    global score
     
     if request.method == "POST":
-        counter = int(request.form["current_question_number"]) # Overwrite the counter if this is a post request
+        counter = int(request.form["current_question_number"])
+        # Overwrite the counter if this is a post request
         print(data[counter]["answer"], request.form["Answer"])
         if data[counter]["answer"] == (request.form["Answer"]):
             # Increment score
@@ -43,10 +46,12 @@ def quiz():
             # Handle what to do on the last question
             print('correct!!!')
             counter += 1
+            score +=1
+            print('{0}').format(score)
         else:
-            print('WRONG!!!')
+            counter += 1
             
-    return render_template('quiz.html', data=data, i=counter)
+    return render_template('quiz.html', data=data, i=counter, s=score)
     
 #create an register form 
 @app.route('/register', methods=['GET','POST'])
