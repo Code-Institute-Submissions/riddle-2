@@ -1,4 +1,2 @@
-ram03:123456
-chris:1234567
-kij:12345
-Ram03:Kavitha2
+Ram03:1
+Priya:22
