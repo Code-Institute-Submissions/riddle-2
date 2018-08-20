@@ -7,6 +7,7 @@ from playsound import playsound
 
 
 app = Flask(__name__)
+app.secret_key = 'some_secret'
 
 with open("data/quiz.json","r") as info:
     data = json.load(info)
@@ -31,17 +32,18 @@ def login():
             if len(password) >= 6:
                 flash("Password must be at least 6 character")
                 
-    return render_template('index.html')
+    return render_template('index.html',page_title="Go over |Home")
         
-score = 0
+
 # quiz 
 @app.route('/quiz', methods=['GET','POST'])
 def quiz():
     
     counter = 0 # If it's a GET request we start the counter at 0
-    global score
+    score = 0
     if request.method == "POST":
         counter = int(request.form["current_question_number"])
+        score = int(request.form["current_score"])
         # Overwrite the counter if this is a post request
         print(data[counter]["answer"], request.form["Answer"])
         if counter == 11:
@@ -52,19 +54,21 @@ def quiz():
             # increment the counter
             # Possibly return a new variable for play_sound=True
             # Handle what to do on the last question
-            print('correct!!!')
+            flash('Right Keep push yourself!')
             counter += 1
-            score +=1
-            
-    
+            score += 1
+            print(score)
          else:
+            flash('last question answer is wrong ')
             counter += 1
+            print(score)
             
-    return render_template('quiz.html', data=data, i=counter, s=score)
+    return render_template('quiz.html', data=data, i=counter, s=score,page_title="Quiz")
 
 @app.route('/gameover')
 def gameover():
-      return render_template('GG.html')
+    login()
+    return render_template('GG.html',page_title="GAME OVER |quiz")
 
 
 #create an register form 
@@ -75,7 +79,7 @@ def register():
                      register_Detail.writelines(request.form["username"]+ ":")
                      register_Detail.writelines(request.form["Password"]+ "\n")
                      return redirect('/quiz')
-     return render_template('register.html')
+     return render_template('register.html',page_title="Register")
 
 
 

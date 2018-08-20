@@ -3,15 +3,30 @@
     <div class="container">
     <div class="row">
         <div class="col-md-12 text vertical">
-            <h2 class="font3 ">{{data[i].question }} {{s}} out of {{i}}  </h2>
+            <h2 class="font3 ">{{data[i].question }}  </h2>
     <form method="POST">
-        <input type="text" name="Answer"/>
+        <input type="text" name="Answer" class="line"/>
         <input type="hidden" value="{{ i }}" name="current_question_number">
         <input type="hidden" value="{{s}}"name="current_score"/>
     <input type="submit" value="Go over" class="btn btn-primary font3"/>
     </form>
+     {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="flashes">
+                
+                   {% for message in messages %}
+                     <h5 class="font3">
+                         {{ message }}
+                     </h5>
+                   {% endfor %}
+                
+            </div>
+            {% endif %}
+            {% endwith %}
+            <h6 class="font3">
+                {{s}} out of {{i}}
+            </h6>
         </div>
-    </div>
     </div>
     
     
