@@ -2,9 +2,6 @@ import os
 from flask import Flask, render_template,flash, redirect, url_for, session, logging, request
 import json
 import random
-from playsound import playsound
-
-
 
 app = Flask(__name__)
 app.secret_key = 'some_secret'
@@ -29,17 +26,17 @@ def login():
                 return redirect('/quiz')
             else:
                 return redirect('/register')
-            if len(password) >= 6:
-                flash("Password must be at least 6 character")
                 
     return render_template('index.html',page_title="Go over |Home")
         
 
+
+    
 # quiz 
 @app.route('/quiz', methods=['GET','POST'])
 def quiz():
     
-    counter = 0 # If it's a GET request we start the counter at 0
+    counter = 0# If it's a GET request we start the counter at 0
     score = 0
     if request.method == "POST":
         counter = int(request.form["current_question_number"])
@@ -58,19 +55,17 @@ def quiz():
             counter += 1
             score += 1
             print(score)
+         
          else:
             flash('last question answer is wrong ')
             counter += 1
             print(score)
             
-    return render_template('quiz.html', data=data, i=counter, s=score,page_title="Quiz")
+    return render_template('quiz.html', data=data,i=counter, s=score,page_title="Quiz")
 
 @app.route('/gameover')
 def gameover():
-    login()
     return render_template('GG.html',page_title="GAME OVER |quiz")
-
-
 #create an register form 
 @app.route('/register', methods=['GET','POST'])
 def register():

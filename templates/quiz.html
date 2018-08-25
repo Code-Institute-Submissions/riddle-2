@@ -4,11 +4,14 @@
     <div class="row">
         <div class="col-md-12 text vertical">
             <h2 class="font3 ">{{data[i].question }}  </h2>
+            
     <form method="POST">
-        <input type="text" name="Answer" class="line"/>
+        <input type="text" name="Answer" class="line"/><br>
+        <br>
         <input type="hidden" value="{{ i }}" name="current_question_number">
         <input type="hidden" value="{{s}}"name="current_score"/>
-    <input type="submit" value="Go over" class="btn btn-primary font3"/>
+    <input type="submit" value="Go over" class="btn btn-primary font3"/><br>
+    <br>
     </form>
      {% with messages = get_flashed_messages() %}
             {% if messages %}
