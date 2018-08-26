@@ -1,2 +1,1 @@
-# quiz
-Creating a quiz game
+# Riddle-me-these(Go over) quiz game

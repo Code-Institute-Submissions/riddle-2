@@ -17,13 +17,17 @@ with open("data/quiz.json","r") as info:
 @app.route('/',methods=['GET','POST'] )
 def login():
     if request.method == "POST":
+        """
+        track of whether the session has ended or not
+        """
+       
         with open("data/reg-detail.txt","r") as fp:  
             valid_users = fp.read().splitlines()
             print(valid_users)
-            username = request.form['username']
+            session['username'] = request.form['username']
             password = request.form['password']
-            if username + ':' + password in valid_users:
-                return redirect('/quiz')
+            if session['username'] + ':' + password in valid_users:
+                return redirect(url_for("quiz"))
             else:
                 return redirect('/register')
                 
@@ -31,41 +35,43 @@ def login():
         
 
 
-    
+  
 # quiz 
 @app.route('/quiz', methods=['GET','POST'])
 def quiz():
     
-    counter = 0# If it's a GET request we start the counter at 0
-    score = 0
+    session['counter'] = 0# If it's a GET request we start the counter at 0
+    session['score'] = 0
     if request.method == "POST":
-        counter = int(request.form["current_question_number"])
-        score = int(request.form["current_score"])
+        session['counter'] = int(request.form["current_question_number"])
+        session['score'] = int(request.form["current_score"])
         # Overwrite the counter if this is a post request
-        print(data[counter]["answer"], request.form["Answer"])
-        if counter == 11:
+        print(data[session['counter']]["answer"], request.form["Answer"])
+        session['end'] = False
+        if session['counter'] == 11 or  session['end']:
             return redirect('/gameover')
         else:
-         if data[counter]["answer"] == (request.form["Answer"]):
+         if data[session['counter']]["answer"] == (request.form["Answer"]):
             # Increment score
             # increment the counter
             # Possibly return a new variable for play_sound=True
             # Handle what to do on the last question
             flash('Right Keep push yourself!')
-            counter += 1
-            score += 1
-            print(score)
+            session['counter'] += 1
+            session['score'] += 1
+            print(session['score'])
+             
          
          else:
             flash('last question answer is wrong ')
-            counter += 1
-            print(score)
+            session['counter'] += 1
             
-    return render_template('quiz.html', data=data,i=counter, s=score,page_title="Quiz")
+            
+    return render_template('quiz.html', data=data,i=session['counter'], s=session['score'],page_title="Quiz")
 
 @app.route('/gameover')
 def gameover():
-    return render_template('GG.html',page_title="GAME OVER |quiz")
+    return render_template('GG.html',page_title="GAME OVER |quiz",s=session['score'],i=session['counter'], username=session['username'])
 #create an register form 
 @app.route('/register', methods=['GET','POST'])
 def register():
