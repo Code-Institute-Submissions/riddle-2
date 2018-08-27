@@ -3,17 +3,18 @@
 }
 
 .bg {
-    background-image:url("https://c.pxhere.com/photos/66/81/gamepad_video_game_controller_game_controller_controller_fun_playing_gaming_technology-568722.jpg!d");
+    background-image:url("/static/media/control.jpg");
     background-size:cover;
     background-repeat:no-repeat;
 
 }
 .bg1{
-    background-image:url("https://images.sobadsogood.com/a-collection-of-famous-battleground-gifs-from-fighting-games/1.jpg");
+    background-image:url("/static/media/gg.jpg");
     background-size:cover;  
     background-repeat:no-repeat;
     
 }
+
 .font3 {
     font-family: 'Rancho', cursive;
     font-weight:600;
@@ -32,10 +33,14 @@
     font-family: 'Patrick Hand', cursive;
     
 }
-.font2 a{
+.font2 a {
     color: dimgrey;
     text-decoration: none;
     
+}
+.font4{
+    font-family: 'Permanent Marker', cursive;
+    color:#ffc107;
 }
 .vertical{
     margin-top:100px;

@@ -56,14 +56,14 @@ def quiz():
             # increment the counter
             # Possibly return a new variable for play_sound=True
             # Handle what to do on the last question
-            flash('Right Keep push yourself!')
+            flash('Right!')
             session['counter'] += 1
             session['score'] += 1
             print(session['score'])
              
          
          else:
-            flash('last question answer is wrong ')
+            flash('last question answer is ' + (data[session['counter']]["answer"]))
             session['counter'] += 1
             
             
@@ -71,7 +71,8 @@ def quiz():
 
 @app.route('/gameover')
 def gameover():
-    return render_template('GG.html',page_title="GAME OVER |quiz",s=session['score'],i=session['counter'], username=session['username'])
+    session['username']
+    return render_template('GG.html',page_title="GAME OVER |quiz",s=session['score'],i=session['counter'], u=session['username'])
 #create an register form 
 @app.route('/register', methods=['GET','POST'])
 def register():

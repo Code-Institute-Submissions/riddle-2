@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
 </head>
 
-<body class="">
+<body class="bg1">
     <div class="container">
        <div class="row">
-           <div class="col-md-12 text vertical">
-               <div class="title">
-                    <h3>Congratulations <strong>{{username}}!</strong> YOU GOT!</h3>
+           <div class="col-md-12 text  font4 "
+           style="
+    margin-top: 180px;">
+               <div class="title ">
+                    <h3>Congratulations <strong>{{u}}!</strong> YOU GOT!</h3>
                 </div>
                 <h4 >
                 {{s}} out of {{i}}
@@ -27,7 +29,7 @@
            </div>
        </div>
     </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
 </body>
 
 </html>
