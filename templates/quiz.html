@@ -1,9 +1,9 @@
 {% extends 'index.html' %}
 {% block content%}
-    <div class="container">
+    <section class="container">
     <div class="row">
-        <div class="col-md-12 text vertical">
-            <h2 class="font3 ">{{data[i].question }}  </h2>
+        <div class="col-xs-12 col-md-12 text vertical">
+            <h2 class="font3 ">{{data[i].question }} </h2>
             
     <form method="POST">
         <input type="text" name="Answer" class="line"/><br>
@@ -18,7 +18,7 @@
             {% if messages %}
             <div class="flashes">
                 
-                   {% for message in messages %}
+                   {% for message in messages %} 
                      <h5 class="font3">
                          {{ message }}
                      </h5>
@@ -31,7 +31,8 @@
                 {{s}} out of {{i}}
             </h6>
         </div>
-    </div>
+        </div>
+    </section>
     
     
 {% endblock %}

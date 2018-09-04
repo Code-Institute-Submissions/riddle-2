@@ -13,9 +13,9 @@
 
 <body class="bg">
     {% block content %}
-    <div class="container">
+    <section class="container">
         <div class="row text vertical">
-            <div class="col-md-3"></div>
+            <div class="col-xs-2 col-md-3"></div>
             <div class="col-xs-6 col-md-6   vertical">
               <h1 class="font"> <a href="/"><img class="size"src="/static/media/i.png"></img></a>Riddle me these</h1>
               <div class="bg-color">
@@ -33,12 +33,12 @@
                 </div>
             </div>
 
-            <div class="col-xs-6 col-md-3 vertical font font2" style="
+            <div class="col-xs-4 col-md-3  font font2" style="
     margin-top: 180px;">
                 <a href="{{ url_for('register') }}"><i class="fas fa-sign-out-alt"></i>New here?</a>
             </div>
         </div>
-    </div>
+    </section>
     {% endblock %}
 </body>
 
