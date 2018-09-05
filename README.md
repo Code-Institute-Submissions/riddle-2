@@ -1,6 +1,6 @@
 ###### Ramanathan Annes
 # Riddle-me-These 
-These a quiz game with random question and it easy to access. These will help to learn new stuffs.
+These a quiz game with random question and it easy to access. These will help you to learn some new things around world.
 
 ### Features 
   Firstly, it have a login form to take the user straight to quiz these  only work when the user already  register 
@@ -18,3 +18,30 @@ These a quiz game with random question and it easy to access. These will help to
       * I used **Font Awesome** for better design and styling
   - Flask : 
      * The whole project mainly depend on **Flask**.
+  - Wireframe : 
+     * I used **Wireframe** to design the project. 
+
+### Testing
+   Manual testing to confirm that the correct question was being passed to the page.
+   
+Another way I tested the quiz app by acting like a player and moving around the quiz to make user functionality is working.
+
+| Functional      | Expected Output Y/N          | Pass Y/N| Explaination of the Functionality 
+| ------------- |:-------------:| -----:|---:|
+| **User login/register form**  |Yes|Yes|If user register their details before they can go to game straightly by using login form.otherwise,if user new to the game they have to register|
+|**Counter/score Increment**|Yes|Yes|score will added only when question is right  |
+|**Answer is Correct**|Yes|Yes|If answer is right user will access the next question and score will added|
+|**Answer is Incorrect**|Yes|Yes|If answer is incorrect in 1st attempt user will get another chance if both answer is incorrect the score will be same but user will get to next question|
+|**After Answered every question**|Yes|Yes|If user answered every question in the game they will redirect to gameover page |
+
+##### Different screen sizes:
+   I used  **Chrome development tool** to testing my quiz game responsible  in smaller screen and in large screen.
+   
+   - The quiz is responsive and works best on both large middle and small screen.
+   - The look and feel remains the same in different sizes
+
+### Deployment
+This project was deployed on Heroku 
+
+##### Config Vars --> IP = 0.0.0.0, PORT = 5000
+* Push to Heroku --> $ git push heroku master

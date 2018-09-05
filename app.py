@@ -8,7 +8,7 @@ app.secret_key = 'some_secret'
 
 with open("data/quiz.json","r") as info: # Opening the JSON file to get the questions and answers for my quiz 
     data = json.load(info)
-
+with open('data/scores.txt', 'a+') as scores:
 
 @app.route('/',methods=['GET','POST'] )
 #creating a function for login system
