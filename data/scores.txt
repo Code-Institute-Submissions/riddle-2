@@ -1,5 +1,3 @@
 Ram:10
 kiji:5
 Priya:11
-Ram03:0
-Ram03:0
