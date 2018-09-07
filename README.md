@@ -19,10 +19,12 @@ These a quiz game with random question and it easy to access. These will help yo
   - Flask : 
      * The whole project mainly depend on **Flask**.
   - Wireframe : 
-     * I used **Wireframe** to design the project. 
+     * I used **Wireframe** to design the project. [Wireframe](https://www.lucidchart.com/invitations/accept/2e536758-5bda-4471-9015-599ee0e4f49b)
 
 ### Testing
    Manual testing to confirm that the correct question was being passed to the page.
+   I did auto testing for check sorted is working.[Testing File](https://github.com/Ramanathan03/riddle/blob/master/test_app.py)
+ 
    
 Another way I tested the quiz app by acting like a player and moving around the quiz to make user functionality is working.
 
@@ -42,6 +44,14 @@ Another way I tested the quiz app by acting like a player and moving around the 
 
 ### Deployment
 This project was deployed on Heroku 
+###### Here is the way to I depolyed to heroku 
+ - git remote add heroku 
+ - create procfile 
+ - ps:scale web=1
+ - Push to Heroku --> $ git push heroku master
+ 
 
 ##### Config Vars --> IP = 0.0.0.0, PORT = 5000
-* Push to Heroku --> $ git push heroku master
+
+### Acknowledgements
+Code Institute Mentor **Chris Zielinski** 

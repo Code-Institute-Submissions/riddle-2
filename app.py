@@ -78,7 +78,12 @@ def get_score():
         for player in high_score:
             player_list = (player.split(':')[0].strip(), int(player.split(':')[1].strip()))
             sorted_top_players.append(player_list)
-
+            """
+            sorted takes two argument 
+            lambda is one line funtion in order to create like below code we need a function  
+            [::-1] these will order large value to small (reverse)
+            [:3] these code is getting first three top score
+                       """
         return sorted(sorted_top_players, key=lambda x: x[1])[::-1][:3]
 
 @app.route('/gameover')

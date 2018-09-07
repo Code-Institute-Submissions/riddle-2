@@ -13,8 +13,8 @@ class TestQuiz(unittest.TestCase):
         Test that our sorted is properly sorting the score in descending order 
         """
         result = app.get_score()
-        top_score = [('Ram',10),('Priya',11),('ajil',7)]
-        self.assertNotEqual(result,top_score)
+        top_score = [('Priya',11),('Ram',10),('ajil',7)]
+        self.assertEqual(result,top_score)
     
     
     def test_question_len(self):
