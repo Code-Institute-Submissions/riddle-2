@@ -39,8 +39,10 @@ Another way I tested the quiz app by acting like a player and moving around the 
 ##### Different screen sizes:
    I used  **Chrome development tool** to testing my quiz game responsible  in smaller screen and in large screen.
    
-   - The quiz is responsive and works best on both large middle and small screen.
+   - The quiz is quite responsive and works best on both large middle and small screen.
    - The look and feel remains the same in different sizes
+
+###### website background image is not responsive  
 
 ### Deployment
 This project was deployed on Heroku 
