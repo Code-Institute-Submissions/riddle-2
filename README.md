@@ -1,6 +1,20 @@
 ###### Ramanathan Annes
 # Riddle-me-These 
 These a quiz game with random question and it easy to access. These will help you to learn some new things around world.
+### UX
+  These website created for people who have less knowledge about Shakespeare, games and in geographical. overall my **Target audience** are leisure people 
+  who want to spend their free time effectively. So I have two question each topic I am sure these website will help them to remember they learn 
+  before and also they will learn new things by these quiz. 
+  
+  * If user failed to answer by given chance the answer will shown on next question bottom.   
+
+#### Intro about how these website work 
+    
+-  If **user** is new to these website they have to register otherwise they can't acess
+-  If **user** already a member on the quiz they can straightly access the quiz 
+-  Quiz is text based so user have to type their answer in given filed  
+-  **Leadeboard** only shown top 3 players by high score 
+
 
 ### Features 
   Firstly, it have a login form to take the user straight to quiz these  only work when the user already  register 
@@ -52,8 +66,11 @@ This project was deployed on Heroku
  - ps:scale web=1
  - Push to Heroku --> $ git push heroku master
  
+*Procfile will help to declares types -> web
 
 ##### Config Vars --> IP = 0.0.0.0, PORT = 5000
-
+## Credits
+### Media 
+The background images used in this site were obtained from [PxHere](https://pxhere.com/)
 ### Acknowledgements
 Code Institute Mentor **Chris Zielinski** 
