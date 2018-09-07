@@ -28,7 +28,7 @@
   font-family: 'Patrick Hand', cursive; }
 
 .font2 a {
-  color: dimgrey;
+  color: white;
   text-decoration: none; }
 
 .font4 {
@@ -48,5 +48,8 @@
 
 .bg-color {
   background-color: #265e7d80; }
-
-/*# sourceMappingURL=style.css.map */
+@media (max-width: 992px) {
+    body {
+        height:100vh;
+    }
+}
