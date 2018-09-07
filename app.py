@@ -15,7 +15,6 @@ def login():
     if request.method == "POST":
         with open("data/reg-detail.txt","r") as fp:  
             valid_users = fp.read().splitlines()
-            print(valid_users)
             session['username'] = request.form['username']
             password = request.form['password']
             if session['username'] + ':' + password in valid_users: 
@@ -37,7 +36,7 @@ def quiz():
         session['score'] = int(request.form["current_score"])
         session['turns'] = int(request.form["current_turn"])
         # Overwrite the counter if this is a post request
-        print(data[session['counter']]["answer"], request.form["Answer"])
+        
         session['end'] = False
         if session['counter'] == 11 or  session['end']: # when session is end or question all finshed it will redirect to gameover page
             return redirect('/gameover')
@@ -47,11 +46,11 @@ def quiz():
                  session['counter'] += 1 
                  session['score'] += 1
                  session['turns'] = 0 # If answer is right then turns will get back to zero so when it run again it will start from 0 
-                 print(session['turns'])
+        
              elif data[session['counter']]["answer"].upper() != (request.form["Answer"]).upper():
                  session['turns'] += 1
                  flash('Wrong!')
-                 print(session['turns'])
+                 
              if session['turns'] > 1:
                      flash('last question answer is ' + (data[session['counter']]["answer"]))
                      session['turns'] = 0 
